@@ -38,11 +38,5 @@ resource "aws_instance" "app_nodes" {
     "DoNotDelete" = "true"
   }
 
-
-}
-
-data "aws_iam_instance_profile" "aws_cloud_provider" {
-  count = var.cloud_provider_role != "" ? 1 : 0
-  name = "an_example_instance_profile_name"
-  role = var.cloud_provider_role
+  iam_instance_profile = var.cloud_provider_role
 }
