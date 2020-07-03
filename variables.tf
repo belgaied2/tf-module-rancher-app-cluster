@@ -28,7 +28,7 @@ variable "docker_version" {
 
 variable "key_name" {
   description = "Key Pair Name to use for the instances"
-  default     = "MacOSsKey"
+  default     = ""
 }
 
 variable "api_url" {
@@ -41,7 +41,6 @@ variable "token_key" {
 
 variable "security_group_name" {
   description = "Security group name for downstream clusters"
-  default     = "rke-default-security-group"
 }
 
 
