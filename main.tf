@@ -3,7 +3,7 @@
 resource "aws_instance" "app_nodes" {
   count = var.node_count
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t2.large"
+  instance_type = var.instance_type
   key_name  = var.key_name 
   user_data = <<-EOT
     #!/bin/bash -x
@@ -39,4 +39,10 @@ resource "aws_instance" "app_nodes" {
   }
 
 
+}
+
+data "aws_iam_instance_profile" "aws_cloud_provider" {
+  count = var.cloud_provider_role != "" ? 1 : 0
+  name = "an_example_instance_profile_name"
+  role = var.cloud_provider_role
 }

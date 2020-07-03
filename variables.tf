@@ -48,6 +48,12 @@ variable "instance_type" {
   default     = "t3a.large"
 }
 
+variable "cloud_provider_role" {
+  description = "Existing role to activate cloud provider"
+  default     = ""
+}
+
+
 
 
 
