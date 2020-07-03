@@ -50,6 +50,12 @@ These are the module's input:
 - security_group_name (Required)
   - description : Security group name for downstream clusters
 
+
+- instance_type (Optional)
+  - description : "AWS Instance Type to create for App Clusters, minimum 2vCPU and 8 GiB RAM recommended"
+  - default     : "t3a.large"
+
+
 ## Outputs
 These are the outputs that this module gives back:
 ```

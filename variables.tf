@@ -43,6 +43,11 @@ variable "security_group_name" {
   description = "Security group name for downstream clusters"
 }
 
+variable "instance_type" {
+  description = "AWS Instance Type to create for App Clusters"
+  default     = "t3a.large"
+}
+
 
 
 
