@@ -6,7 +6,16 @@ provider "aws" {
   region     = var.aws_region
 }
 
-provider "rancher/rancher2" {
+provider "rancher2" {
   api_url = var.api_url
   token_key = var.token_key
+}
+
+terraform{
+  required_providers {
+    rancher2 = {
+      source = "rancher/rancher2"
+    }
+  }
+  required_version = ">= 0.13"
 }
