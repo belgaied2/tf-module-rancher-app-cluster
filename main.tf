@@ -11,7 +11,7 @@ resource "aws_instance" "app_nodes" {
     sudo usermod -aG docker ubuntu
     cat <<EOF > /etc/docker/daemon.json
   EOT
-  security_groups = [data.aws_security_group.app_cluster_sg.id]
+  vpc_security_group_ids = [data.aws_security_group.app_cluster_sg.id]
 
   root_block_device {
     volume_type = "gp2"
