@@ -6,7 +6,7 @@ provider "aws" {
   region     = var.aws_region
 }
 
-provider "rancher2" {
+provider "rancher/rancher2" {
   api_url = var.api_url
   token_key = var.token_key
 }
